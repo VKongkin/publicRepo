@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.user-img{
+    width: 50px;
+    border-radius: 100%;
+    border: 1px solid #eee;
+}
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: blueviolet;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .main-content{
+    left: 250px;
+    width: calc(100% - 250px - 450px);
+}
+
+.sidebar.active{
+    width: 250px;
+}
+
+.sidebar #btn{
+    position: absolute;
+    color: white;
+    top: .4rem ;    
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn{
+    left: 90%;
+}
+
+.sidebar .top .logo{
+    columns: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active .top .logo{
+    opacity: 1;
+}
+
+.top .logo i{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+
+.user{
+ display: flex;
+ align-items: center;
+ margin: 1rem 0;
+}
+.user p{
+    column-rule: #fff;
+    opacity: 1;
+    margin-left: 1rem;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.sidebar p{
+    opacity: 0;
+}
+
+.sidebar.active p{
+    opacity: 1;
+
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover{
+    background-color: white;
+    color: #12171e;
+}
+
+.sidebar ul li a i{
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.sidebar .nav-item{
+    opacity: 0;
+}
+
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0.5rem 0.8rem rgba(0,0 ,0,.2);
+    border-radius: .6rem;
+    padding: .4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+}
+
+.sidebar ul li:hover .tooltip{
+    opacity: 1;
+}
+
+.sidebar.active ul li .tooltip{
+    display: none;
+}
+
+.main-content{
+    position: relative;
+    background-color: #eee;
+    min-height: 100vh;
+    top: 0;
+    left: 80px;
+    transform: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+/* Invoie Right Side Display */
+
+.invoice-details{
+    border: 1px solid blue;
+  position: fixed; /* Fixed positioning to keep it in place even when scrolling */
+  top: 0; /* Adjust this value to position it vertically */
+  right: 0; /* Align the div to the right side of the screen */
+  width: 450px; /* Set the width of the div */
+  height: 100%; /* Set the height of the div to cover the entire viewport */
+  background-color: #f0f0f0; 
+  padding: 10px;
+}
+
+.invoice-details ~ .main-content{
+    width: calc(100% - 450px - 80px);
+}
+
+.main-content{
+    right: 450px;
+    
+}
+
+.invoice-top{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.add-customer{
+    padding: 10px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: white;
+    
+}
+
+.add-customer:hover{
+    background-color: blue;
+    color: white;
+}
+
+.customer{
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.customer > option{
+    padding: 5px;
+}
+
+.invoice-middle{
+    margin-top: 10px;
+    padding: 10px;
+    gap: 5px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.total-items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-heading{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.hr{
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+.detail-body{
+    padding: 0px;
+    width: 450px - 20px;
+    height: 50px;
+    display: flex;
+    text-align: center;
+    /* justify-content: space-between; */
+    border: 1px solid red;
+    font-size: 10px;
+}
+
+.body-1, .heading-1{
+    width: 40%;
+    border: 1px solid red;
+}
+
+.detail-img-qty{
+    display: flex;
+}
+
+.detail-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.detail-img > img{
+    height: 30px;
+    width: 30px;
+}
+
+.detail-qty{
+    display: flex;
+}
+
+.detail-qty > input{
+    width: 20px;
+    height: 20px;
+}
+
+.body-2, .heading-2{
+    width: 20%;
+}
+
+.body-2{
+    display: flex; /* Add display: flex; */
+    align-items: center;
+    
+}
+
+.body-2 > input{
+    font-size: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.body-3, .heading-3{
+    width: 15%;
+}
+
+.body-4, .heading-4{
+    width: 15%;
+}
+
+.body-5,    .heading-5{
+    width: 10%;
+}
+
+.discount{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* justify-content: center; */
+    /* height: 100%; */
+    padding: 1px;
+    width: 100%;
+}
+.center > p{
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
+    border: 1px solid gold;
+    height: 100%;
+}
+
+.bottom-items{
+    display: flex;
+    flex-direction: column;    
+}
+
+.items{
+    display: flex;
+    justify-content: space-between;
+
+}
+.items > input{
+    padding: 5px;
+    justify-content: center;
+}
+
+
+.btn-down{
+    margin-top: 10px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+     padding: 10px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: white;
+    width: 100%;
+}
+
+.btn:hover{
+    background-color: blue;
+    color: white;
+}
+
